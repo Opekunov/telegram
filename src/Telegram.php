@@ -142,9 +142,9 @@ class Telegram
         $endPointUrl = 'https://api.telegram.org/bot'.$this->token.'/'.$endpoint;
 
         try {
-            return $this->httpClient()->post($endPointUrl, [
-                $multipart ? 'multipart' : 'form_params' => $params,
-                "proxy" => $this->proxy
+            return $this->httpClient()->request('POST', $endPointUrl, [
+                "proxy" => $this->proxy,
+                $multipart ? 'multipart' : 'form_params' => $params
             ]);
         } catch (ClientException $exception) {
             throw CouldNotSendNotification::telegramRespondedWithAnError($exception);
