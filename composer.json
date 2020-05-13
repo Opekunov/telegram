@@ -16,6 +16,11 @@
             "email": "syed@lukonet.com",
             "homepage": "https://lukonet.com",
             "role": "Developer"
+        },
+        {
+            "name": "Aleksandr Opekunov",
+            "email": "iam@opekunov.com",
+            "role": "Developer"
         }
     ],
     "require": {

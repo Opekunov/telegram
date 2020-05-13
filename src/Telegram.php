@@ -20,14 +20,18 @@ class Telegram
     /** @var null|string Telegram Bot API Token. */
     protected $token;
 
+    /** @var null|string Proxy https://username:password@adress:port **/
+    protected $proxy;
+
     /**
      * @param null            $token
      * @param HttpClient|null $httpClient
      */
-    public function __construct($token = null, HttpClient $httpClient = null)
+    public function __construct($token = null, HttpClient $httpClient = null, $proxy = null)
     {
         $this->token = $token;
         $this->http = $httpClient;
+        $this->proxy = $proxy;
     }
 
     /**
@@ -140,6 +144,7 @@ class Telegram
         try {
             return $this->httpClient()->post($endPointUrl, [
                 $multipart ? 'multipart' : 'form_params' => $params,
+                "proxy" => $this->proxy
             ]);
         } catch (ClientException $exception) {
             throw CouldNotSendNotification::telegramRespondedWithAnError($exception);
