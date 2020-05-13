@@ -1,5 +1,5 @@
 {
-    "name": "laravel-notification-channels/telegram",
+    "name": "laravel-nc/o-telegram",
     "description": "Telegram Notifications Channel for Laravel",
     "keywords": [
         "telegram notification",
@@ -8,7 +8,7 @@
         "notification",
         "telegram notifications channel"
     ],
-    "homepage": "https://github.com/laravel-notification-channels/telegram",
+    "homepage": "https://github.com/Opekunov/telegram",
     "license": "MIT",
     "authors": [
         {
